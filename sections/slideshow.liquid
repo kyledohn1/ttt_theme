@@ -165,6 +165,7 @@
                 <p>{{ block.settings.subheading }}</p>
               </div>
             {%- endif -%}
+            {%- if block.settings.button_position_type == 'flexbox' %}
             {%- if block.settings.button_label != blank -%}
               <div class="banner__buttons">
                 <a
@@ -194,6 +195,8 @@
                 </a>
               </div>
             {%- endif -%}
+            {%- endif -%}
+
           </div>
         </div>
       </div>
@@ -459,10 +462,6 @@
             {
               "value": "flexbox",
               "label": "Flexbox Positioning"
-            },
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
             }
           ],
           "default": "flexbox",
@@ -480,16 +479,9 @@
           "id": "link",
           "label": "t:sections.slideshow.blocks.slide.settings.link.label"
         },
-         {
-          "type": "text",
-          "id": "button_label_2",
-          "default": "Button label 2",
-          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
-          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
-        },
         {
           "type": "range",
-          "id": "button_x_position_1",
+          "id": "button_1_x_position",
           "min": 0,
           "max": 100,
           "step": 1,
@@ -498,9 +490,46 @@
           "label": "Button 1 X Position"
         },
         {
-           "type": "url",
-          "id": "link_2",
+          "type": "range",
+          "id": "button_1_y_position",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50,
+          "label": "Button 1 Y Position"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label",
+          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
+          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
+        },
+        {
+          "type": "url_2",
+          "id": "link",
           "label": "t:sections.slideshow.blocks.slide.settings.link.label"
+        },
+        {
+          "type": "range",
+          "id": "button_2_x_position",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50,
+          "label": "Button 2 X Position"
+        },
+        {
+          "type": "range",
+          "id": "button_2_y_position",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50,
+          "label": "Button 2 Y Position"
         },
         {
           "type": "checkbox",
