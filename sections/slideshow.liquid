@@ -174,8 +174,23 @@
                     role="link" aria-disabled="true"
                   {% endif %}
                   class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
+                  style="position: absolute; top: 50%; left:{{ block.settings.button_x_position_1 }}%;"
                 >
                   {{- block.settings.button_label | escape -}}
+                </a>
+              </div>
+            {%- endif -%}
+            {%- if block.settings.button_label_2 != blank -%}
+              <div class="banner__buttons">
+                <a
+                  {% if block.settings.link_2 %}
+                    href="{{ block.settings.link }}"
+                  {% else %}
+                    role="link" aria-disabled="true"
+                  {% endif %}
+                  class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
+                >
+                  {{- block.settings.button_label_2 | escape -}}
                 </a>
               </div>
             {%- endif -%}
@@ -440,9 +455,32 @@
           "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
           "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
         },
+
         {
           "type": "url",
           "id": "link",
+          "label": "t:sections.slideshow.blocks.slide.settings.link.label"
+        },
+         {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label 2",
+          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
+          "info": "t:sections.slideshow.blocks.slide.settings.button_label_2.info"
+        },
+        {
+          "type": "range",
+          "id": "button_x_position_1",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50,
+          "label": "Button 1 X Position"
+        },
+        {
+           "type": "url",
+          "id": "link_2",
           "label": "t:sections.slideshow.blocks.slide.settings.link.label"
         },
         {

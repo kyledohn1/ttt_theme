@@ -187,9 +187,12 @@
                   sizes: sizes,
                   preload: true
                 }}
+              <span class="header__heading-logo-text">{{ shop.name }}</span>
               </div>
+                            
+
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              <span class="header__heading-logo-text"">{{ shop.name }}</span>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -227,9 +230,10 @@
                   sizes: sizes,
                   preload: true
                 }}
+               <span class="header__heading-logo-text">{{ shop.name }}</span>
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              <span class="header__heading-logo-text">{{ shop.name }}</span>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -609,7 +613,7 @@
     {
       "type": "checkbox",
       "id": "enable_country_selector",
-      "default": true,
+      "default": false,
       "label": "t:sections.header.settings.enable_country_selector.label"
     },
     {
@@ -620,7 +624,7 @@
     {
       "type": "checkbox",
       "id": "enable_language_selector",
-      "default": true,
+      "default": false,
       "label": "t:sections.header.settings.enable_language_selector.label"
     },
     {
